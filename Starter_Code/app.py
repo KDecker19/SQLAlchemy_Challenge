@@ -290,8 +290,9 @@ def start_end():
     
     return jsonify(start_end_dict)
 
-    
-    
 
+session.close()
+    
+    
 
 
