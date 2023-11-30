@@ -1,53 +1,36 @@
 # Import the dependencies.
-from flask import FLask, jsonify
+from Flask import Flask, jsonify
+from Sqlalchemy import create_engine
+from sqlalchemy.orm import Session
+from sqlalchemy.ext.automap import automap_base
 import datetime as dt
 import numpy as np
-from sqlalchemy import func
 from models import WeatherData
 
-
-
-
+'''Imported Datetime to assist with date calculations. KD '''
 #################################################
 # Database Setup
 #################################################
 
-
 engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
 # reflect an existing database into a new model
-
 base = automap_base()
 base.prepare(engine, reflect=True)
 
-
 # reflect the tables
-
-datetime = base.classes.measurement
-station =  base.classes.station
-tobs = base.classes.measurement
-
-
-
-# Save references to each table
-
-datetime = session.query(datetime).all()    
-station = session.query(station).all()
-tobs = session.query(tobs).all()
-
-table = [datetime, station, tobs]
-
+Datetime = base.classes.measurement
+Station = base.classes.station
+Tobs = base.classes.measurement
 
 # Create our session (link) from Python to the DB
-
-session = Sessoion(engine)
-
+session = Session(engine)
 
 #################################################
 # Flask Setup
 #################################################
 
-app = flask(__name__)
+app = Flask(__name__)
 
 
 #################################################
