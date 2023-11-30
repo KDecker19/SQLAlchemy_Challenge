@@ -1,11 +1,11 @@
 # Import the dependencies.
 from Flask import Flask, jsonify
 from Sqlalchemy import create_engine
-from sqlalchemy.orm import Session
-from sqlalchemy.ext.automap import automap_base
-import datetime as dt
-import numpy as np
-from models import WeatherData
+from Sqlalchemy.orm import Session
+from Sqlalchemy.ext.automap import automap_base
+import Datetime as dt
+import Numpy as np
+from Models import WeatherData
 
 '''Imported Datetime to assist with date calculations. KD '''
 #################################################
